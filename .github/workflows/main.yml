@@ -15,5 +15,4 @@ jobs:
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         METHOD: sftp
         PORT: ${{ secrets.FTP_PORT}}
-        ARGS: --delete
         REMOTE_DIR: www
