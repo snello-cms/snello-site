@@ -16,3 +16,5 @@ jobs:
         METHOD: sftp
         PORT: ${{ secrets.FTP_PORT}}
         REMOTE_DIR: www
+        ARGS: --exclude-glob=.github* --exclude-glob=.git* --exclude-glob=*.MD
+       
