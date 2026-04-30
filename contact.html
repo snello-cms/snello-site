@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Snello Admin | Contact and Resources</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Real resources to start with Snello Admin: documentation, repositories, Docker, and quick start paths.">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/rebrand.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+<div class="site-shell">
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="brand" href="index.html" aria-label="Snello home">
+                <img src="images/logo.svg" alt="Snello logo">
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="platform.html">Platform</a>
+                <a href="showcase.html">Interface</a>
+                <a class="is-active" href="contact.html">Contact</a>
+                <a href="https://docs.snello.io" target="_blank" rel="noreferrer">Documentation</a>
+            </nav>
+            <a class="button button--primary" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">Try it now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero hero--page">
+            <div class="container hero__grid contact-hero">
+                <div class="hero__content">
+                    <p class="eyebrow">Contact and resources</p>
+                    <h1>Real entry points to start or go deeper.</h1>
+                    <p class="hero__lead">This page surfaces real project access points: documentation, repositories, Docker image, and quick start paths. The form remains available for direct contact, while concrete resources are immediately accessible.</p>
+                </div>
+                <div class="contact-panel">
+                    <h2>Talk about your project</h2>
+                    <p>For demos, integrations, or support. You can also use the official resources below right away.</p>
+                    <form class="contact-form" method="post" action="#">
+                        <label>
+                            <span>Name</span>
+                            <input type="text" name="name" placeholder="Full name">
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" placeholder="name@company.com">
+                        </label>
+                        <label>
+                            <span>Company</span>
+                            <input type="text" name="company" placeholder="Company name">
+                        </label>
+                        <label>
+                            <span>Message</span>
+                            <textarea name="message" rows="5" placeholder="Describe your project context"></textarea>
+                        </label>
+                        <button class="button button--primary" type="submit">Send request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--alt">
+            <div class="container card-grid card-grid--three">
+                <article class="statement-card">
+                    <h3>Documentation</h3>
+                    <p><a class="text-link" href="https://docs.snello.io" target="_blank" rel="noreferrer">docs.snello.io</a></p>
+                    <p>Main reference to explore the product and its ecosystem.</p>
+                </article>
+                <article class="statement-card">
+                    <h3>Repository</h3>
+                    <p><a class="text-link" href="https://github.com/snello-cms/snello-admin" target="_blank" rel="noreferrer">github.com/snello-cms/snello-admin</a></p>
+                    <p>Angular interface source code, build setup, developer notes, and proxy configurations.</p>
+                </article>
+                <article class="statement-card">
+                    <h3>Docker</h3>
+                    <p><a class="text-link" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">snellocms/snello-all-in-one</a></p>
+                    <p>Fastest starting point to run and test the ecosystem.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <p>Contact page focused on real resources and project onboarding.</p>
+            <p><a class="text-link" href="https://github.com/snello-cms/snello-api" target="_blank" rel="noreferrer">Open the snello-api repository as well</a></p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
