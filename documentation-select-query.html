@@ -10,12 +10,12 @@
 <link href="css/rebrand.css" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
-<body>
+<body class="docs-page">
 <div class="site-shell">
 <header class="site-header"><div class="container site-header__inner"><a class="brand" href="index.html" aria-label="Snello home"><img src="images/logo.svg" alt="Snello logo"></a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="platform.html">Platform</a><a href="showcase.html">Interface</a><a href="contact.html">Contact</a><a class="is-active" href="documentation.html">Documentation</a></nav><a class="button button--primary" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">Try it now</a></div></header>
 <main>
-<section class="hero hero--page"><div class="container hero__grid hero__grid--narrow"><div class="hero__content"><p class="eyebrow">Documentation</p><h1>Select Query</h1><p class="hero__lead">SelectQuery creates virtual REST tables backed by SQL, without creating physical tables.</p></div></div></section>
-<section class="section"><div class="container docs-layout"><aside class="docs-nav"><p>Documentation Pages</p><a href="documentation-metadata.html">Metadata</a><a href="documentation-field-definitions.html">Field Definitions</a><a class="is-active" href="documentation-select-query.html">Select Query</a><a href="documentation-document-management.html">Document Management</a><a href="documentation-rest-query-params.html">REST Query Params</a><a href="documentation-ai-agent.html">AI Agent</a><a href="documentation-ai-tools-schema.html">AI Tools Schema</a></aside><article class="doc-article">
+<section class="hero hero--page docs-hero"><div class="container hero__grid hero__grid--narrow"><div class="hero__content"><p class="eyebrow">Documentation</p><h1>Select Query</h1><p class="hero__lead">SelectQuery creates virtual REST tables backed by SQL, without creating physical tables.</p></div></div></section>
+<section class="section section--docs"><div class="container docs-layout"><aside class="docs-nav"><p>Documentation Pages</p><a href="documentation-metadata.html">Metadata</a><a href="documentation-field-definitions.html">Field Definitions</a><a class="is-active" href="documentation-select-query.html">Select Query</a><a href="documentation-document-management.html">Document Management</a><a href="documentation-rest-query-params.html">REST Query Params</a><a href="documentation-ai-agent.html">AI Agent</a><a href="documentation-ai-tools-schema.html">AI Tools Schema</a></aside><article class="doc-article">
 <h2>Virtual endpoint behavior</h2>
 <p>If query_name is <strong>user_actions_feed</strong>, the API can expose:</p>
 <pre><code>GET /api/user_actions_feed
@@ -44,5 +44,6 @@ DELETE /api/selectqueries/{uuid}</code></pre>
 </main>
 <footer class="site-footer"><div class="container site-footer__inner"><p>Source markdown: docs/docs/select-query.md</p><p><a class="text-link" href="documentation.html">Back to documentation index</a></p></div></footer>
 </div>
+<script src="js/docs.js"></script>
 </body>
 </html>

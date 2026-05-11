@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Documentation | AI Dynamic Tooling</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Dynamic tooling architecture for integrating Snello metadata with Quarkus LangChain4j.">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/rebrand.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body class="docs-page">
+<div class="site-shell">
+<header class="site-header"><div class="container site-header__inner"><a class="brand" href="index.html" aria-label="Snello home"><img src="images/logo.svg" alt="Snello logo"></a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="platform.html">Platform</a><a href="showcase.html">Interface</a><a href="contact.html">Contact</a><a class="is-active" href="documentation.html">Documentation</a></nav><a class="button button--primary" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">Try it now</a></div></header>
+<main>
+<section class="hero hero--page docs-hero"><div class="container hero__grid hero__grid--narrow"><div class="hero__content"><p class="eyebrow">AI Deep Dive</p><h1>Dynamic Tooling with Metadata</h1><p class="hero__lead">Use metadata-driven tools to let the assistant discover fields, validate payloads, and execute write actions without hardcoding each entity.</p></div></div></section>
+<section class="section section--docs"><div class="container docs-layout"><aside class="docs-nav"><p>Documentation Pages</p><a class="is-active" href="documentation-ai-tooling.html">AI Dynamic Tooling</a></aside><article class="doc-article">
+<h2>Architecture pattern</h2>
+<p>The recommended integration is schema-aware and tool-driven:</p>
+<ul>
+<li>Expose metadata as a discovery tool.</li>
+<li>Expose write operations as controlled tools.</li>
+<li>Let the model call tools in sequence: inspect schema, ask for missing fields, submit validated payload.</li>
+</ul>
+<h2>Why dynamic tools matter</h2>
+<ul>
+<li>New fields in Snello metadata become available to AI flows without backend code rewrites.</li>
+<li>The assistant reduces hallucinations by relying on real schema definitions.</li>
+<li>Validation can happen before write calls by matching payload keys against metadata fields.</li>
+</ul>
+<h2>Suggested tool contract</h2>
+<pre><code>getSchema(entityName)
+upsertContent(entityName, jsonData)
+listContent(entityName, filters)</code></pre>
+<p>Keep tools narrowly scoped and explicit in responsibility so you can audit usage and errors.</p>
+<h2>Operational flow</h2>
+<ol>
+<li>User asks to create or update content.</li>
+<li>Assistant calls getSchema for the target entity.</li>
+<li>Assistant requests missing required values from user.</li>
+<li>Assistant sends a final structured payload through upsertContent.</li>
+</ol>
+<h2>System prompt guidance</h2>
+<p>Instruct the assistant to always query schema before writes and to reject unknown fields. This significantly improves consistency and safety.</p>
+</article></div></section>
+</main>
+<footer class="site-footer"><div class="container site-footer__inner"><p>Source markdown: docs/docs/ai/ai-1.md</p><p><a class="text-link" href="documentation.html">Back to documentation index</a></p></div></footer>
+</div>
+<script src="js/docs.js"></script>
+</body>
+</html>

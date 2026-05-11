@@ -10,7 +10,7 @@
 <link href="css/rebrand.css" rel="stylesheet">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
-<body>
+<body class="docs-page">
 <div class="site-shell">
     <header class="site-header">
         <div class="container site-header__inner">
@@ -29,17 +29,31 @@
     </header>
 
     <main>
-        <section class="hero hero--page">
-            <div class="container hero__grid hero__grid--narrow">
+        <section class="hero hero--page docs-hero docs-hero--hub">
+            <div class="container hero__grid docs-hero__grid">
                 <div class="hero__content">
                     <p class="eyebrow">Documentation hub</p>
                     <h1>Technical guides for data modeling, APIs, and AI features.</h1>
                     <p class="hero__lead">This internal section is built from the markdown files in the project documentation folder. Use it as a starting point to configure metadata, fields, queries, documents, and AI tools.</p>
                 </div>
+                <aside class="docs-hero-panel" aria-label="Documentation quick access">
+                    <p class="eyebrow">Quick Access</p>
+                    <h3>Start from the right section</h3>
+                    <p>Jump directly to the most used guides and AI implementation references.</p>
+                    <div class="docs-hero-panel__actions">
+                        <a class="button button--secondary" href="documentation-metadata.html">Metadata guide</a>
+                        <a class="button button--secondary" href="documentation-ai-tooling.html">AI tooling guide</a>
+                    </div>
+                    <ul class="docs-hero-panel__stats">
+                        <li><strong>11</strong><span>Guides available</span></li>
+                        <li><strong>4</strong><span>AI focused pages</span></li>
+                        <li><strong>100%</strong><span>Internal documentation</span></li>
+                    </ul>
+                </aside>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section section--docs-hub">
             <div class="container section__heading">
                 <p class="eyebrow">Core docs</p>
                 <h2>Choose a topic</h2>
@@ -76,10 +90,30 @@
                     <p>Chat endpoint, provider switching, and model configuration.</p>
                     <a class="text-link" href="documentation-ai-agent.html">Open page</a>
                 </article>
+                <article class="statement-card docs-card">
+                    <h3>AI Dynamic Tooling</h3>
+                    <p>Schema-aware tools driven by metadata and dynamic entity contracts.</p>
+                    <a class="text-link" href="documentation-ai-tooling.html">Open page</a>
+                </article>
+                <article class="statement-card docs-card">
+                    <h3>AI Security and Streaming</h3>
+                    <p>JWT propagation, tool hardening, and real-time SSE response patterns.</p>
+                    <a class="text-link" href="documentation-ai-security-streaming.html">Open page</a>
+                </article>
                 <article class="statement-card docs-card docs-card--wide">
                     <h3>AI Tools Schema</h3>
                     <p>Schema rules for dynamic AI tools, SQL placeholders, and validation logic.</p>
                     <a class="text-link" href="documentation-ai-tools-schema.html">Open page</a>
+                </article>
+                <article class="statement-card docs-card">
+                    <h3>Database Notes</h3>
+                    <p>Secondary database section with restore and backup asset references.</p>
+                    <a class="text-link" href="documentation-db-guide.html">Open page</a>
+                </article>
+                <article class="statement-card docs-card">
+                    <h3>Logs Notes</h3>
+                    <p>Secondary logging section with query history and maintenance pointers.</p>
+                    <a class="text-link" href="documentation-logs-guide.html">Open page</a>
                 </article>
             </div>
         </section>
@@ -106,5 +140,6 @@
         </div>
     </footer>
 </div>
+<script src="js/docs.js"></script>
 </body>
 </html>
