@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Documentation | Metadata</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Metadata guide for Snello API resources and ownership protection.">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/rebrand.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+<div class="site-shell">
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="brand" href="index.html" aria-label="Snello home"><img src="images/logo.svg" alt="Snello logo"></a>
+<nav class="site-nav" aria-label="Main navigation">
+<a href="index.html">Home</a><a href="platform.html">Platform</a><a href="showcase.html">Interface</a><a href="contact.html">Contact</a><a class="is-active" href="documentation.html">Documentation</a>
+</nav>
+<a class="button button--primary" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">Try it now</a>
+</div>
+</header>
+<main>
+<section class="hero hero--page"><div class="container hero__grid hero__grid--narrow"><div class="hero__content"><p class="eyebrow">Documentation</p><h1>Metadata</h1><p class="hero__lead">Metadata define each logical resource and drive table behavior, query options, and API exposure.</p></div></div></section>
+<section class="section"><div class="container docs-layout">
+<aside class="docs-nav"><p>Documentation Pages</p><a class="is-active" href="documentation-metadata.html">Metadata</a><a href="documentation-field-definitions.html">Field Definitions</a><a href="documentation-select-query.html">Select Query</a><a href="documentation-document-management.html">Document Management</a><a href="documentation-rest-query-params.html">REST Query Params</a><a href="documentation-ai-agent.html">AI Agent</a><a href="documentation-ai-tools-schema.html">AI Tools Schema</a></aside>
+<article class="doc-article">
+<h2>Role in the system</h2>
+<p>A metadata entry describes one table or entity and defines table name, key field, default sort, searchable fields, select fields, and creation behavior.</p>
+<h2>Main fields</h2>
+<ul>
+<li><strong>table_name</strong>: logical resource name used in APIs.</li>
+<li><strong>table_key</strong>: primary key column for CRUD operations.</li>
+<li><strong>select_fields</strong> and <strong>search_fields</strong>: base fields used for list and filtering.</li>
+<li><strong>order_by</strong>: default sorting expression.</li>
+<li><strong>api_protected</strong> and <strong>username_field</strong>: ownership-aware protection controls.</li>
+</ul>
+<h2>Ownership protection</h2>
+<p>When <strong>api_protected=true</strong>, the API enforces ownership using <strong>username_field</strong> and the authenticated principal from the token.</p>
+<ul>
+<li>POST and PUT force owner value for non-admin or non-manager users.</li>
+<li>GET list and GET by id filter by owner for non-admin or non-manager users.</li>
+<li>DELETE allows non-admin or non-manager users only on owned records.</li>
+</ul>
+<h2>Metadata endpoints</h2>
+<pre><code>GET    /api/metadatas
+GET    /api/metadatas/{uuid}
+POST   /api/metadatas
+PUT    /api/metadatas/{uuid}
+DELETE /api/metadatas/{uuid}</code></pre>
+<h2>Related endpoints</h2>
+<pre><code>GET /api/datalist/metadata/{name}
+GET /api/datalist/metadata/{name}/fielddefinitions</code></pre>
+<h2>Recommended workflow</h2>
+<p>Create metadata first, then complete form and SQL behavior through field definitions. Keep table_key aligned across both models.</p>
+</article>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container site-footer__inner"><p>Source markdown: docs/docs/metadata.md</p><p><a class="text-link" href="documentation.html">Back to documentation index</a></p></div></footer>
+</div>
+</body>
+</html>

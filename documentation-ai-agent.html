@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Documentation | AI Agent</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="AI Agent backend endpoint and provider configuration.">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/rebrand.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+<div class="site-shell">
+<header class="site-header"><div class="container site-header__inner"><a class="brand" href="index.html" aria-label="Snello home"><img src="images/logo.svg" alt="Snello logo"></a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="platform.html">Platform</a><a href="showcase.html">Interface</a><a href="contact.html">Contact</a><a class="is-active" href="documentation.html">Documentation</a></nav><a class="button button--primary" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">Try it now</a></div></header>
+<main>
+<section class="hero hero--page"><div class="container hero__grid hero__grid--narrow"><div class="hero__content"><p class="eyebrow">Documentation</p><h1>AI Agent</h1><p class="hero__lead">Snello exposes an AI assistant through a backend chat endpoint powered by Quarkus LangChain4j.</p></div></div></section>
+<section class="section"><div class="container docs-layout"><aside class="docs-nav"><p>Documentation Pages</p><a href="documentation-metadata.html">Metadata</a><a href="documentation-field-definitions.html">Field Definitions</a><a href="documentation-select-query.html">Select Query</a><a href="documentation-document-management.html">Document Management</a><a href="documentation-rest-query-params.html">REST Query Params</a><a class="is-active" href="documentation-ai-agent.html">AI Agent</a><a href="documentation-ai-tools-schema.html">AI Tools Schema</a></aside><article class="doc-article">
+<h2>Chat endpoint</h2>
+<pre><code>POST /api/chat</code></pre>
+<p>The assistant can read metadata, inspect records, and suggest payloads for create or update operations.</p>
+<h2>Available providers</h2>
+<ul>
+<li>OpenAI</li>
+<li>Google Gemini</li>
+</ul>
+<h2>Provider switch</h2>
+<p>Model selection is controlled by one property:</p>
+<pre><code>snello.aitype=openai
+snello.aitype=google-ai-gemini</code></pre>
+<h2>Environment variables</h2>
+<ul>
+<li>OPENAI_API_KEY</li>
+<li>GEMINI_API_KEY</li>
+</ul>
+<h2>Example runtime commands</h2>
+<pre><code>./mvnw quarkus:dev -Dsnello.aitype=openai
+./mvnw quarkus:dev -Dsnello.aitype=google-ai-gemini</code></pre>
+</article></div></section>
+</main>
+<footer class="site-footer"><div class="container site-footer__inner"><p>Source markdown: docs/docs/ai-agent.md</p><p><a class="text-link" href="documentation.html">Back to documentation index</a></p></div></footer>
+</div>
+</body>
+</html>

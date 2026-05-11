@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Documentation | Document Management</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Document management documentation for storage backends and media APIs.">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/rebrand.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+<div class="site-shell">
+<header class="site-header"><div class="container site-header__inner"><a class="brand" href="index.html" aria-label="Snello home"><img src="images/logo.svg" alt="Snello logo"></a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="platform.html">Platform</a><a href="showcase.html">Interface</a><a href="contact.html">Contact</a><a class="is-active" href="documentation.html">Documentation</a></nav><a class="button button--primary" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">Try it now</a></div></header>
+<main>
+<section class="hero hero--page"><div class="container hero__grid hero__grid--narrow"><div class="hero__content"><p class="eyebrow">Documentation</p><h1>Document Management</h1><p class="hero__lead">Unified REST APIs for file upload, metadata, and multi-backend storage.</p></div></div></section>
+<section class="section"><div class="container docs-layout"><aside class="docs-nav"><p>Documentation Pages</p><a href="documentation-metadata.html">Metadata</a><a href="documentation-field-definitions.html">Field Definitions</a><a href="documentation-select-query.html">Select Query</a><a class="is-active" href="documentation-document-management.html">Document Management</a><a href="documentation-rest-query-params.html">REST Query Params</a><a href="documentation-ai-agent.html">AI Agent</a><a href="documentation-ai-tools-schema.html">AI Tools Schema</a></aside><article class="doc-article">
+<h2>Core model</h2>
+<p>Document entries track file identity, original name, storage path, mime type, size, generated formats, and optional business links through table_name and table_key.</p>
+<h2>Storage abstraction</h2>
+<p>A shared StorageService contract allows the same REST API to run on different backends:</p>
+<ul>
+<li>S3 or MinIO implementation.</li>
+<li>Filesystem implementation.</li>
+<li>Blob storage placeholder branch.</li>
+</ul>
+<h2>Endpoints</h2>
+<pre><code>GET    /api/documents
+GET    /api/documents/{id}
+POST   /api/documents
+PUT    /api/documents/{uuid}
+PUT    /api/documents/{id}/data
+DELETE /api/documents/{uuid}?delete=true
+
+GET /api/documents/{uuid}/download
+GET /api/documents/{uuid}/download/{name}
+GET /api/documents/{uuid}/webp</code></pre>
+<h2>On-demand format generation</h2>
+<p>When a requested format does not exist, the API can trigger asynchronous conversion and return currently available content. Future requests receive cached derivatives.</p>
+<h2>Async pipeline</h2>
+<p>Image events are processed asynchronously and generated formats are stored back through the configured storage service implementation.</p>
+</article></div></section>
+</main>
+<footer class="site-footer"><div class="container site-footer__inner"><p>Source markdown: docs/docs/document-management.md</p><p><a class="text-link" href="documentation.html">Back to documentation index</a></p></div></footer>
+</div>
+</body>
+</html>

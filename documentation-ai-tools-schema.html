@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Documentation | AI Tools Schema</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="description" content="Schema rules for dynamic AI tools configured from database records.">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/rebrand.css" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+<div class="site-shell">
+<header class="site-header"><div class="container site-header__inner"><a class="brand" href="index.html" aria-label="Snello home"><img src="images/logo.svg" alt="Snello logo"></a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="platform.html">Platform</a><a href="showcase.html">Interface</a><a href="contact.html">Contact</a><a class="is-active" href="documentation.html">Documentation</a></nav><a class="button button--primary" href="https://hub.docker.com/r/snellocms/snello-all-in-one" target="_blank" rel="noreferrer">Try it now</a></div></header>
+<main>
+<section class="hero hero--page"><div class="container hero__grid hero__grid--narrow"><div class="hero__content"><p class="eyebrow">Documentation</p><h1>AI Tools Schema</h1><p class="hero__lead">AI tools are dynamic database-defined functions that the assistant can call with validated parameters.</p></div></div></section>
+<section class="section"><div class="container docs-layout"><aside class="docs-nav"><p>Documentation Pages</p><a href="documentation-metadata.html">Metadata</a><a href="documentation-field-definitions.html">Field Definitions</a><a href="documentation-select-query.html">Select Query</a><a href="documentation-document-management.html">Document Management</a><a href="documentation-rest-query-params.html">REST Query Params</a><a href="documentation-ai-agent.html">AI Agent</a><a class="is-active" href="documentation-ai-tools-schema.html">AI Tools Schema</a></aside><article class="doc-article">
+<h2>Tool record fields</h2>
+<ul>
+<li><strong>name</strong>: unique tool identifier.</li>
+<li><strong>method_name</strong>: method exposed to the AI, optional fallback to name.</li>
+<li><strong>description</strong>: instruction text used by the model.</li>
+<li><strong>sql_query</strong>: SELECT query with positional placeholders.</li>
+<li><strong>parameters_schema</strong>: JSON Schema object for parameters.</li>
+<li><strong>active</strong>: enables or disables the tool.</li>
+</ul>
+<h2>Critical rules</h2>
+<ul>
+<li>Property order in parameters_schema must match placeholder order in sql_query.</li>
+<li>Declared parameter types must align with SQL binding expectations.</li>
+<li>parameters_schema must be valid JSON Schema of type object.</li>
+</ul>
+<h2>Validation checklist</h2>
+<ul>
+<li>Reject invalid JSON in parameters_schema.</li>
+<li>Verify placeholder count against schema properties.</li>
+<li>Keep name unique at repository level.</li>
+<li>Use method_name fallback when blank.</li>
+</ul>
+<h2>Best practices</h2>
+<ul>
+<li>Write clear descriptions so the model chooses the right tool.</li>
+<li>Use descriptive names, avoid generic labels.</li>
+<li>Always use placeholders instead of string interpolation.</li>
+<li>Test every query with realistic inputs and edge cases.</li>
+</ul>
+</article></div></section>
+</main>
+<footer class="site-footer"><div class="container site-footer__inner"><p>Source markdown: docs/docs/ai-tools-schema.md</p><p><a class="text-link" href="documentation.html">Back to documentation index</a></p></div></footer>
+</div>
+</body>
+</html>
